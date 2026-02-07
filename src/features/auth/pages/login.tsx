@@ -27,7 +27,10 @@ export default function LoginPage() {
       {/* Bottom link */}
       <p className="mt-6 text-center text-sm text-muted-foreground">
         {"Don't have an account ? "}
-        <Link to="/signup" className="font-semibold text-brand hover:underline">
+        <Link
+          to="/sign-up"
+          className="font-semibold text-brand hover:underline"
+        >
           Sign up
         </Link>
       </p>
