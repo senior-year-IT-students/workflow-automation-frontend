@@ -1,28 +1,29 @@
+import { useState } from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import Sidebar from "./dashboard-sidebar";
+import DashboardHome from "./dashboard-home";
 
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "../../../shared/components/ui/sidebar";
 
+export default function DashboardLayout() {
+  const [collapsed, setCollapsed] = useState(false);
+  const location = useLocation();
 
-import { Outlet } from "react-router-dom";
+  const sidebarWidth = collapsed ? 90 : 260;
 
-const DashboardLayout = () => {
   return (
-    <SidebarProvider>
+    <div className="flex min-h-screen bg-[#f1f1f1] dark:bg-[#262A35]">
+      <Sidebar
+        collapsed={collapsed}
+        setCollapsed={setCollapsed}
+        width={sidebarWidth}
+      />
 
-      <SidebarInset>
-        <div className="flex h-16 items-center gap-2 border-b px-4">
-          <SidebarTrigger />
-          <div className="flex-1" />
-        
-        </div>
-
-        <main className="flex-1 flex flex-col gap-4 p-4">
-          <div className="rounded-xl p-4">
-            <Outlet />
-          </div>
-        </main>
-      </SidebarInset>
-    </SidebarProvider>
+      <main
+        className="flex-1 min-h-screen overflow-auto bg-[#f6f6f6] p-6 dark:bg-[#252A35]"
+        style={{ marginLeft: sidebarWidth }}
+      >
+        {location.pathname === "/dashboard" ? <DashboardHome /> : <Outlet />}
+      </main>
+    </div>
   );
-};
-
-export default DashboardLayout;
+}
