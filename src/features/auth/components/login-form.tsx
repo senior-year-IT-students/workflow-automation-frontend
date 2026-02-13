@@ -6,8 +6,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Mail, Lock, Eye, EyeOff, ArrowRight } from "lucide-react";
 import { loginSchema, type LoginFormValues } from "./config";
 import { cn } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
+import { appRoutes } from "@/routes";
 
 export function LoginForm() {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   const {
@@ -22,13 +25,14 @@ export function LoginForm() {
     },
   });
 
-  async function onSubmit(data: LoginFormValues) {
-    // This will be replaced with actual API call via axios + react-query
-    console.log("Login submitted:", data);
-  }
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        navigate("/dashboard");
+      }}
+      className="space-y-5"
+    >
       {/* Email Field */}
       <div className="space-y-2">
         <label

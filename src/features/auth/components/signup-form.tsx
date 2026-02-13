@@ -14,8 +14,10 @@ import {
 } from "lucide-react";
 import { signupSchema, type SignupFormValues } from "../signup-config";
 import { cn } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
 
 export function SignupForm() {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   const {
@@ -31,7 +33,13 @@ export function SignupForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        navigate("/login");
+      }}
+      className="space-y-5"
+    >
       {/* Name row */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <Input

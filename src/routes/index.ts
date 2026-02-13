@@ -1,18 +1,21 @@
+// routes/index.ts
+
 export const appRoutes = {
   auth: {
     login: "/login",
     signUp: "/sign-up",
   },
+
   dashboard: {
     root: "/dashboard",
-    index: "/dashboard",
-    complaints: "/dashboard/complaints",
-
-    statistics: "/dashboard/statistics",
-    users: "/dashboard/users",
-    settings: "/dashboard/settings",
+    team: "/dashboard/team",
+    cases: "/dashboard/cases",
+    aiAgents: "/dashboard/ai-agents",
+    analytics: "/dashboard/analytics",
+    notifications: "/dashboard/notifications",
+    knowledgeBase: "/dashboard/knowledge-base",
+    workflow: "/dashboard/workflow",
   },
+
   home: "/",
-  contact: "/contact",
-  about: "/about",
 };
