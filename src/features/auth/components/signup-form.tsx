@@ -20,6 +20,22 @@ export function SignupForm() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
+  // ✅ Business Types Array
+  const businessTypes = [
+    "SaaS (Software as a Service)",
+    "Software House",
+    "Digital Agency",
+    "Tech Startup",
+    "IT Consulting Firm",
+    "Cloud Service Provider",
+    "Cybersecurity Company",
+    "Game Development Studio",
+    "IoT Solutions Provider",
+    "DevOps Services Company",
+    "AR/VR Development Company",
+    "Robotics and Automation Firm",
+  ];
+
   const {
     register,
     handleSubmit,
@@ -28,18 +44,15 @@ export function SignupForm() {
     resolver: yupResolver(signupSchema),
   });
 
-  async function onSubmit(data: SignupFormValues) {
+  function onSubmit(data: SignupFormValues) {
     console.log("Signup submitted:", data);
+
+    // temporary redirect
+    navigate("/login");
   }
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        navigate("/login");
-      }}
-      className="space-y-5"
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
       {/* Name row */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <Input
@@ -72,10 +85,13 @@ export function SignupForm() {
             )}
           >
             <option value="">Choose your business type</option>
-            <option value="startup">Startup</option>
-            <option value="agency">Agency</option>
-            <option value="enterprise">Enterprise</option>
-            <option value="freelancer">Freelancer</option>
+
+            {/* ✅ Dynamic Options */}
+            {businessTypes.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
           </select>
         </div>
         {errors.businessType && (
