@@ -42,7 +42,7 @@ export function CategoriesPanel({
                 className={cn(
                   "flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm transition-colors",
                   active
-                    ? "bg-brand/80 text-primary-foreground"
+                    ? "bg-brand/80 text-primary"
                     : "text-card-foreground hover:bg-accent",
                 )}
               >
@@ -51,7 +51,7 @@ export function CategoriesPanel({
                   className={cn(
                     "rounded-full px-2 py-0.5 text-xs font-medium",
                     active
-                      ? "bg-primary-foreground/20 text-primary-foreground"
+                      ? "bg-primary-foreground/20 text-primary"
                       : "bg-primary/10 text-primary",
                   )}
                 >

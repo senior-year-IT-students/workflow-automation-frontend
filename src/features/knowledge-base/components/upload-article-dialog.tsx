@@ -2,6 +2,7 @@ import { useState, useRef, useCallback } from "react";
 import { Upload, X, FileText, ChevronDown, Hash, Type } from "lucide-react";
 import { DOCUMENT_TYPES, type DocumentType } from "../types/index";
 import { useKnowledgeBaseStore } from "../hooks/use-knowledge-base-store";
+import { ThemedButton } from "@/shared/components/ui/themed-button";
 
 interface UploadArticleDialogProps {
   isOpen: boolean;
@@ -327,12 +328,12 @@ export function UploadArticleDialog({
           >
             cancel
           </button>
-          <button
+          <ThemedButton
             onClick={handleSubmit}
-            className="rounded-lg bg-brand px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+             className="rounded-lg bg-brand px-4 py-2 text-sm font-medium  transition-colors"
           >
             upload article
-          </button>
+          </ThemedButton>
         </div>
       </div>
     </div>

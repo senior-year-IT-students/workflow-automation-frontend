@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { useKnowledgeBaseStore } from "../hooks/use-knowledge-base-store";
 import { EditArticleDialog } from "../components/edit-article-dialog";
+import { ThemedButton } from "@/shared/components/ui/themed-button";
 
 export default function ArticleDetailsPage() {
   const { articleId } = useParams<{ articleId: string }>();
@@ -54,12 +55,12 @@ export default function ArticleDetailsPage() {
           </button>
           <h1 className="text-xl font-bold text-foreground">{article.title}</h1>
         </div>
-        <button
+        <ThemedButton
           onClick={() => setEditOpen(true)}
-          className="rounded-lg bg-brand px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-brand/90 transition-colors"
+          // className="rounded-lg bg-brand px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-brand/90 transition-colors"
         >
           Edit Metadata and Tags
-        </button>
+        </ThemedButton>
       </div>
 
       <div className="flex flex-1 gap-6">
@@ -153,12 +154,14 @@ export default function ArticleDetailsPage() {
           </div>
 
           {/* Actions */}
-          <button className="flex w-full items-center justify-center gap-2 rounded-lg border border-border py-2.5 text-sm font-medium text-card-foreground border-card-foreground hover:bg-accent transition-colors">
+          <ThemedButton className="flex w-full items-center justify-center gap-2 rounded-lg border border-border py-2.5 text-sm font-medium transition-colors">
             <Download className="h-4 w-4" /> Download File
-          </button>
-          <button className="flex w-full items-center justify-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          </ThemedButton>
+          <ThemedButton
+            className="flex w-full items-center justify-center gap-2 text-sm  transition-colors"
+          >
             <ExternalLink className="h-4 w-4" /> Open In New Tab
-          </button>
+          </ThemedButton>
         </div>
       </div>
 

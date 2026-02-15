@@ -8,6 +8,7 @@ import { CategoriesPanel } from "../components/categories-panel";
 import { UploadArticleDialog } from "../components/upload-article-dialog";
 import { Pagination } from "../components/pagination";
 import type { SortOrder } from "../types";
+import { ThemedButton } from "@/shared/components/ui/themed-button";
 
 const SORT_OPTIONS: { label: string; value: SortOrder }[] = [
   { label: "Newest First", value: "newest" },
@@ -54,13 +55,13 @@ export default function KnowledgeBasePage() {
                 Centralized documentation and business rules
               </p>
             </div>
-            <button
+            <ThemedButton
               onClick={() => setUploadOpen(true)}
-              className="flex items-center gap-2 rounded-lg bg-brand px-4 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+              className="flex items-center gap-2 rounded-lg  px-4 py-2.5 text-sm font-medium  transition-colors"
             >
               <Plus className="h-4 w-4 " />
               Upload Article
-            </button>
+            </ThemedButton>
           </div>
 
           {/* Search + Sort */}
