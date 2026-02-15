@@ -14,6 +14,7 @@ export const appRoutes = {
     analytics: "/dashboard/analytics",
     notifications: "/dashboard/notifications",
     knowledgeBase: "/dashboard/knowledge-base",
+    knowledgeBaseDetails: "/dashboard/knowledge-base/:articleId",
     workflow: "/dashboard/workflow",
   },
 
