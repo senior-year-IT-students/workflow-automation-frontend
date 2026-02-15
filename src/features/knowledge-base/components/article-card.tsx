@@ -19,10 +19,10 @@ export function ArticleCard({ article, onClick }: ArticleCardProps) {
   return (
     <button
       onClick={() => onClick(article)}
-      className="flex w-full gap-4 rounded-xl border border-border bg-card p-4 text-left transition-colors hover:border-primary/30 hover:shadow-sm"
+      className="flex w-full gap-4 rounded-xl border border-border bg-card p-4 text-left transition-colors hover:border-brand hover:shadow-sm"
     >
       {/* PDF Thumbnail */}
-      <div className="flex h-20 w-16 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+      <div className="flex h-20 w-16 shrink-0 items-center justify-center rounded-lg bg-brand/10">
         <FileText className="h-6 w-6 text-primary" />
       </div>
 
@@ -39,11 +39,11 @@ export function ArticleCard({ article, onClick }: ArticleCardProps) {
 
         {/* Tags */}
         <div className="flex items-center gap-1.5">
-          <Tag className="h-3 w-3 text-muted-foreground" />
+          <Tag className="h-3 w-3 text-brand" />
           {article.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-md bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary"
+              className="rounded-md bg-brand/10 px-2 py-0.5 text-xs font-medium text-brand"
             >
               {tag}
             </span>

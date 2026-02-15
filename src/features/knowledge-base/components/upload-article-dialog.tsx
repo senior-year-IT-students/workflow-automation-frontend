@@ -145,8 +145,8 @@ export function UploadArticleDialog({
           onClick={() => fileInputRef.current?.click()}
           className={`mb-4 flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed p-6 transition-colors ${
             dragActive
-              ? "border-primary bg-primary/10"
-              : "border-primary/30 bg-primary/5"
+              ? "border-brand bg-brand/10"
+              : "border-brand/30 bg-brand/5"
           }`}
         >
           <input
@@ -158,7 +158,7 @@ export function UploadArticleDialog({
           />
           {file ? (
             <div className="flex items-center gap-2 text-sm text-card-foreground">
-              <FileText className="h-5 w-5 text-primary" />
+              <FileText className="h-5 w-5 text-brand" />
               <span className="font-medium">{file.name}</span>
               <button
                 onClick={(e) => {
@@ -191,7 +191,7 @@ export function UploadArticleDialog({
           Title
         </label>
         <div className="mb-3 flex items-center gap-2 rounded-lg border border-input bg-card px-3 py-2">
-          <Type className="h-4 w-4 text-primary" />
+          <Type className="h-4 w-4 text-brand" />
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -219,7 +219,7 @@ export function UploadArticleDialog({
             >
               {docType || "choose your document type"}
             </span>
-            <ChevronDown className="h-4 w-4 text-muted-foreground" />
+            <ChevronDown className="h-4 w-4 text-brand" />
           </button>
           {showTypeDropdown && (
             <div className="absolute z-10 mt-1 w-full rounded-lg border border-border bg-popover p-1 shadow-md">
@@ -253,7 +253,7 @@ export function UploadArticleDialog({
         </label>
         <div className="relative mb-3">
           <div className="flex flex-wrap items-center gap-1.5 rounded-lg border border-input bg-card px-3 py-2">
-            <Hash className="h-4 w-4 text-primary" />
+            <Hash className="h-4 w-4 text-brand" />
             {selectedTags.map((tag) => (
               <span
                 key={tag}
@@ -288,7 +288,7 @@ export function UploadArticleDialog({
               }
               className="flex-1 min-w-[80px] bg-transparent text-sm text-card-foreground placeholder:text-muted-foreground outline-none"
             />
-            <ChevronDown className="h-4 w-4 text-muted-foreground" />
+            <ChevronDown className="h-4 w-4 text-brand" />
           </div>
           {showTagDropdown && (tagInput || filteredTags.length > 0) && (
             <div className="absolute z-10 mt-1 w-full rounded-lg border border-border bg-popover p-1 shadow-md max-h-32 overflow-auto">
@@ -329,7 +329,7 @@ export function UploadArticleDialog({
           </button>
           <button
             onClick={handleSubmit}
-            className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+            className="rounded-lg bg-brand px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
           >
             upload article
           </button>

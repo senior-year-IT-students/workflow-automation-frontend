@@ -42,7 +42,7 @@ export function CategoriesPanel({
                 className={cn(
                   "flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm transition-colors",
                   active
-                    ? "bg-primary text-primary-foreground"
+                    ? "bg-brand/80 text-primary-foreground"
                     : "text-card-foreground hover:bg-accent",
                 )}
               >
@@ -64,7 +64,7 @@ export function CategoriesPanel({
       </div>
 
       {/* Stats card */}
-      <div className="rounded-xl border border-border bg-primary/5 p-4 space-y-2">
+      <div className="rounded-xl border border-border bg-brand/5 p-4 space-y-2">
         <div className="flex items-center justify-between text-sm text-card-foreground">
           <span>Total Articles:</span>
           <span className="font-semibold">{totalArticles}</span>

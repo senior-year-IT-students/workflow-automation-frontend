@@ -56,9 +56,9 @@ export default function KnowledgeBasePage() {
             </div>
             <button
               onClick={() => setUploadOpen(true)}
-              className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+              className="flex items-center gap-2 rounded-lg bg-brand px-4 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
             >
-              <Plus className="h-4 w-4" />
+              <Plus className="h-4 w-4 " />
               Upload Article
             </button>
           </div>
@@ -66,7 +66,7 @@ export default function KnowledgeBasePage() {
           {/* Search + Sort */}
           <div className="mb-6 flex gap-3">
             <div className="flex flex-1 items-center gap-2 rounded-lg border border-input bg-card px-3 py-2">
-              <Search className="h-4 w-4 text-muted-foreground" />
+              <Search className="h-5 w-4 text-muted-foreground" />
               <input
                 value={filters.search}
                 onChange={(e) => setFilters({ search: e.target.value })}
